@@ -1,0 +1,34 @@
+<div class="container-fluid">
+
+<div class="masthead">
+      <h3 class="text-muted">Your Week at GA</h3>   
+
+  </div>
+
+<%= form_for @event do |f| %>
+
+    <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    </div>
+
+      <div>
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+    </div>
+
+      <div>
+    <%= f.label :time %>
+    <%= f.time_field :time %>
+    </div>
+
+      <div>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+    </div>
+
+    <%= f.submit "Update Event"%>
+
+<% end %>
+
+</div>

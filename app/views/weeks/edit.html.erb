@@ -1,0 +1,36 @@
+Edit week!
+
+  <div class="masthead">
+      <h3 class="text-muted"></h3>   
+  </div>
+
+<br>
+<br>
+<%= form_for @week do |f| %>
+
+    <%= f.label :name %> 
+    <%= f.text_field :name %>
+    <br>
+
+    <%= f.label :date %> 
+    <%= f.date_field :date %>
+
+    <br>
+    <%= f.label :message %> 
+    <%= f.text_area :message %>
+
+    <br>
+    <%= f.label :this_week %> 
+    <%= f.text_area :this_week %>
+
+    <br>
+    <%= f.label :next_week %>
+    <%= f.text_area :next_week %>
+
+    <br>
+    <%= f.label :office_hours %> 
+    <%= f.text_area :office_hours %>
+    <br>
+    <%= f.submit "Update week!" %>
+
+<%end %>
