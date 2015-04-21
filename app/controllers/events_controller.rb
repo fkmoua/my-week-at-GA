@@ -26,12 +26,18 @@ class EventsController < ApplicationController
     end
 
     def update
-        @event = Event.find (params[:id])
+        @event = Event.find(params[:id])
 
           if @event.update_attributes(params.require(:event).permit(:name, :date, :time, :location))
             redirect_to event_path
         else
             render :edit
         end
+    end
+
+    def destroy
+        @event = Event.find(params[:id])
+        @event.destroy
+        redirect_to events_path
     end
 end

@@ -6,49 +6,45 @@
   </div>
 
 <center>
-<form class="form-inline"> 
+
 <%= form_for @week do |f| %>
 
-    <div class="form-group">
     <%= f.label :name %>
-    <%= f.text_field :name, class:"form-control", placeholder:"Week" %>
+    <%= f.text_field :name %>
     </div>
     <br>
     <br>
 
-    <div class="form-group">
     <%= f.label :date %>
-    <%= f.text_field :date, class:"form-control" %>
+    <%= f.text_field :date%>
     </div>
     <br>
     <br>
 
-      <div class="form-group">
     <%= f.label :message %>
-    <%= f.text_area :message, class:"form-control" %>
+    <%= f.text_area :message%>
     </div>
       <br>
     <br>
 
       <div>
     <%= f.label :this_week %>
-    <%= f.text_area :this_week, class:"form-control" %>
+    <%= f.text_area :this_week%>
     </div>
     <br>
     <br>
 
     <div>
     <%= f.label :next_week %>
-    <%= f.text_area :next_week, class:"form-control" %>
+    <%= f.text_area :next_week%>
     </div>
     <br>
     <br>
 
     <div>
     <%= f.label :office_hours %>
-    <%= f.text_area :office_hours, class:"form-control" %>
+    <%= f.text_area :office_hours %>
     </div>
-
 
     <%= f.submit "Add Week"%>
 

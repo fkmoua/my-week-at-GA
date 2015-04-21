@@ -1,0 +1,25 @@
+<div class="container-fluid">
+
+  <div class="masthead">
+      <h3 class="text-muted">Your Week at GA</h3>   
+  </div>
+
+  <div class="jumbotron home-style">
+       <table class="table">
+        <tr>
+          <th> Name </th>
+          <th> URL </th>
+          <th> Category</th>
+        </tr>
+
+      <% @resources.each do |resource| %>
+        <tr>
+          <td><%= link_to resource.name%></td>
+          <td><%= resource.url %></td>
+          <td><%= resource.category %></td>
+        </tr>
+      
+      <% end %>
+      </table>
+
+  </div>

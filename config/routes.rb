@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
-  root "weeks#index"
+  get "weeks" => "weeks#index"
   get "weeks/new" => "weeks#new", as: :new_week
   get "weeks/:id" => "weeks#show", as: :week
-  post "weeks/" => "weeks#create"
+  post "weeks" => "weeks#create"
   get "weeks/:id/edit" => "weeks#edit", as: :edit_week
   patch "weeks/:id" => "weeks#update"
+  delete "weeks/:id" => "weeks#destroy"
 
   get "events" => "events#index"
   get "events/new" => "events#new", as: :new_event
@@ -13,7 +14,18 @@ Rails.application.routes.draw do
   post "events" => "events#create"
   get "events/:id/edit" => "events#edit", as: :edit_event
   patch "events/:id" => "events#update"
+  delete "events/:id" => "events#destroy"
 
+  get "resources" => "resources#index"
+
+  get "users" => "users#index"
+  get "signup" => "users#new"
+  get "users/:id" => "users#show"
+  post "users" => "users#create"
+
+  get '/login'     => 'sessions#new'
+  post '/login'    => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

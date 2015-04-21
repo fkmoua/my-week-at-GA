@@ -16,16 +16,15 @@ class WeeksController < ApplicationController
 
     def create
         @week = Week.new(params.require(:week).permit(:name, :date, :message, :this_week, :next_week, :office_hours))
+        # @event = Event.new(params.require(:event).permit(:name, :date, :time, :location))
 
-        if @week.save 
-            redirect_to root_path
+        if @week.save!
+            redirect_to weeks_path
         else
-            render :week             #if can't save to database (something goes wrong), show us that new page again.
+            render :weeks             #if can't save to database (something goes wrong), show us that new page again.
         end 
-
-        @event = Event.new(params.require(:event).permit(:name, :date, :time, :location))
-        
     end
+
 
     def edit
         @week = Week.find(params[:id])
@@ -39,6 +38,12 @@ class WeeksController < ApplicationController
         else
             render :edit
         end
+    end
+
+    def destroy
+        @week = Week.find(params[:id])
+        @week.destroy
+        redirect_to weeks_path
     end
 
 end

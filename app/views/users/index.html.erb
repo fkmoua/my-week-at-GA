@@ -1,0 +1,16 @@
+<br>
+<br>
+<br>
+
+<h2> Your team </h2>
+<hr>
+<% @users.each do |user| %>
+    <div>
+    <%= user.name %>
+    </div>
+    <div>
+    <%= user.email %>
+    </div>
+    <br>
+
+<% end %>

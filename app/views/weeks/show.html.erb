@@ -8,6 +8,7 @@
      <div class="jumbotron home-style">
         <h1> <%= @week.name %> 
         <span> <%= link_to("Edit Week", edit_week_path, {class:"btn btn-primary"}) %></span>
+        <span> <%= link_to("Delete Week", week_path, {method: :delete, data: "Are you sure?", class:"btn btn-primary"}) %></span>
         </h1>
          <p class="lead" id="lead-css"><%= @week.message %> </p>
     </div> 
@@ -43,11 +44,7 @@
               <h2>Events</h2>
               <p>EVENTS PLACEHOLDER</p>
 
-              <% @week.events.each do |event| %>
 
-                <%= event.name %>
-
-              <% end %>
 
               <p><%= link_to("Add an Event", new_event_path, {class: "btn btn-primary"}) %></p>
               <p><%= link_to("See all Events", events_path, {class: "btn btn-primary"}) %></p>
