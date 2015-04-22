@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get "resources" => "resources#index"
 
   get "users" => "users#index"
-  get "signup" => "users#new"
+  get "/signup" => "users#new"
   get "users/:id" => "users#show"
   post "users" => "users#create"
 
