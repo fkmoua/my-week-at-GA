@@ -10,35 +10,29 @@
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
+
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Your Week at GA</a>
+            <a class="navbar-brand" href="#">My Week at GA</a>
         </div>
+
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active">
-            <li><%= link_to "Weeks", weeks_path %> </li>
-            <li><%= link_to "Events", events_path %> </li>
-            <li><%= link_to "Resources", resources_path %> </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                </ul>
+              <li class="active">
+                <li><%= link_to "Weeks", weeks_path %> </li>
+                <li><%= link_to "Events", events_path %> </li>
+                <li><%= link_to "Resources", resources_path %> </li>
+          <!-- begin login/logout links -->
+                  <% if logged_in? %>
+                  <li> Welcome, <%= current_user.name %>! </li><li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+                <% else %>
+                   <li> <%= link_to 'Log In', login_path %> </li> <li><%= link_to 'Sign up', signup_path %></li>
+                <% end %>
             </li>
-            <li><%= link_to(current_user.name, users_path) %></li>
+          <!-- end login/logout links -->
           </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-
+        </div><!--/ end of nav bar -->
+      </div> <!-- end of container -->
+    </nav> <!-- end of nav class -->
 
 <%= yield %>
 

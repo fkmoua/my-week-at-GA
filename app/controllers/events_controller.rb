@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+ extend SimpleCalendar
+  has_calendar
+    
     def index
         @events = Event.all
     end
