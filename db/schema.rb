@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150421024148) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.string   "date"
@@ -24,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150421024148) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "events", ["week_id"], name: "index_events_on_week_id"
+  add_index "events", ["week_id"], name: "index_events_on_week_id", using: :btree
 
   create_table "resources", force: :cascade do |t|
     t.string   "name"
@@ -35,7 +38,7 @@ ActiveRecord::Schema.define(version: 20150421024148) do
     t.string   "category"
   end
 
-  add_index "resources", ["week_id"], name: "index_resources_on_week_id"
+  add_index "resources", ["week_id"], name: "index_resources_on_week_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -57,4 +60,6 @@ ActiveRecord::Schema.define(version: 20150421024148) do
     t.datetime "updated_at",   null: false
   end
 
+  add_foreign_key "events", "weeks"
+  add_foreign_key "resources", "weeks"
 end
