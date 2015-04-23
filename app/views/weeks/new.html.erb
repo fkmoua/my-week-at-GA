@@ -5,9 +5,9 @@
 </div>
 
 <center>
-
 <%= form_for @week do |f| %>
 
+    <h2> This week </h2>
     <div>
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -33,7 +33,7 @@
     <%= f.label :next_week %>
     <%= f.text_area :next_week%>
     </div>
-    
+
     <div>
     <%= f.label :office_hours %>
     <%= f.text_area :office_hours %>

@@ -36,18 +36,19 @@
 
               <div class="col-lg-4" id="resources">
               <h2>Resources</h2>
-    `
+                   <p><%= link_to("Add a resource", new_resource_path, {class: "btn btn-primary"}) %></p>
             
             </div>
 
               <div class="col-lg-4" id="events">
               <h2>Events</h2>
-              <p>EVENTS PLACEHOLDER</p>
+              <% @week.events.each do |event| %>
+                <%= event.name %>
 
+              <% end %>
 
-
-              <p><%= link_to("Add an Event", new_event_path, {class: "btn btn-primary"}) %></p>
-              <p><%= link_to("See all Events", events_path, {class: "btn btn-primary"}) %></p>
+                  <p><%= link_to("New Event", new_week_event_path, {class: "btn btn-primary"}) %></p>
+                  <p><%= link_to("See all Events", events_path, {class: "btn btn-primary"}) %></p>
             </div>
     </div>
 </div>

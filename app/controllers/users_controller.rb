@@ -16,7 +16,7 @@ class UsersController < ApplicationController
         @user = User.new(params.require(:user).permit(:name,:email,:photo,:password))
 
         if @user.save 
-            redirect_to users_path
+            redirect_to weeks_path
         else
             render :new
         end

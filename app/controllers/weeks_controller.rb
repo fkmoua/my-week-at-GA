@@ -6,24 +6,25 @@ class WeeksController < ApplicationController
 
     def show
         @week = Week.find(params[:id])
-        @events = Event.all
+        @events = @week.events
     end
 
     def new
         @week = Week.new
-        @event = Event.new
+        #@event = Event.new
     end
 
     def create
         @week = Week.new(params.require(:week).permit(:name, :date, :message, :this_week, :next_week, :office_hours))
-        # @event = Event.new(params.require(:event).permit(:name, :date, :time, :location))
+        #@event = Event.new(params.require(:event).permit(:name, :date, :time, :location))
 
-        if @week.save
+        if @week.save 
             redirect_to weeks_path
         else
             render :weeks             #if can't save to database (something goes wrong), show us that new page again.
         end 
     end
+
 
 
     def edit

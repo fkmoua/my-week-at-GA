@@ -4,6 +4,7 @@ class EventsController < ApplicationController
     
     def index
         @events = Event.all
+
     end
 
     def show
@@ -11,17 +12,21 @@ class EventsController < ApplicationController
     end
 
     def new
-        @event = Event.new
+        @week = Week.find(params[:id])
+        @event = @week.events.new
     end
 
     def create
-        @event = Event.new(params.require(:event).permit(:name, :date, :time, :location))
+        @week = Week.find(params[:id])
+        @event = @week.events.new(params.require(:event).permit(:name, :date, :time, :location))
+        @event.save
+        redirect_to weeks_path
 
-          if @event.save 
-            redirect_to events_path
-        else
-            render :event             #if can't save to database (something goes wrong), show us that new page again.
-        end 
+        # if @event.save 
+        #     redirect_to weeks_path
+        #  else
+        #      render :new             #if can't save to database (something goes wrong), show us that new page again.
+        #  end 
     end
 
     def edit
