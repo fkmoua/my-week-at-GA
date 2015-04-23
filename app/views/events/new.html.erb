@@ -8,23 +8,23 @@
 <%= form_for @event do |f| %>
 
     <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
     </div>
 
-      <div>
-    <%= f.label :date %>
-    <%= f.date_field :date %>
+    <div>
+      <%= f.label :date %>
+      <%= f.date_field :date %>
     </div>
 
-      <div>
-    <%= f.label :time %>
-    <%= f.time_field :time %>
+    <div>
+      <%= f.label :time %>
+      <%= f.time_field :time %>
     </div>
 
-      <div>
-    <%= f.label :location %>
-    <%= f.text_field :location %>
+    <div>
+      <%= f.label :location %>
+      <%= f.text_field :location %>
     </div>
 
     <%= f.submit "Add Event"%>

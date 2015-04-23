@@ -1,6 +1,7 @@
 
 default: &default
   adapter: postgresql
+  encoding: unicode
   pool: 5
 
 development:
@@ -17,3 +18,4 @@ test:
 production:
   <<: *default
   database: my-week-at-GA_production
+

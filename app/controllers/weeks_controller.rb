@@ -18,7 +18,7 @@ class WeeksController < ApplicationController
         @week = Week.new(params.require(:week).permit(:name, :date, :message, :this_week, :next_week, :office_hours))
         # @event = Event.new(params.require(:event).permit(:name, :date, :time, :location))
 
-        if @week.save!
+        if @week.save
             redirect_to weeks_path
         else
             render :weeks             #if can't save to database (something goes wrong), show us that new page again.

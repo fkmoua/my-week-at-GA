@@ -2,54 +2,45 @@
 
 <div class="masthead">
       <h3 class="text-muted">Your Week at GA</h3>   
-
-  </div>
+</div>
 
 <center>
 
 <%= form_for @week do |f| %>
 
+    <div>
     <%= f.label :name %>
     <%= f.text_field :name %>
     </div>
-    <br>
-    <br>
 
+
+    <div>
     <%= f.label :date %>
     <%= f.text_field :date%>
     </div>
-    <br>
-    <br>
 
+    <div>
     <%= f.label :message %>
     <%= f.text_area :message%>
     </div>
-      <br>
-    <br>
 
-      <div>
+    <div>
     <%= f.label :this_week %>
     <%= f.text_area :this_week%>
     </div>
-    <br>
-    <br>
 
     <div>
     <%= f.label :next_week %>
     <%= f.text_area :next_week%>
     </div>
-    <br>
-    <br>
-
+    
     <div>
     <%= f.label :office_hours %>
     <%= f.text_area :office_hours %>
     </div>
 
-    <%= f.submit "Add Week"%>
+    <%= f.submit "Add Week" %>
 
 <% end %>
 
-</div>
-</form>
 </center>

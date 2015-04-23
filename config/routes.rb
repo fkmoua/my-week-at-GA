@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get "users/:id" => "users#show"
   post "users" => "users#create"
 
-  get '/login'     => 'sessions#new'
+  get '/login' => 'sessions#new'
   # root 'sessions#new'
   post 'login'    => 'sessions#create'
   delete 'logout' => 'sessions#destroy'

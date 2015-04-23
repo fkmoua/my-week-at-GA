@@ -22,14 +22,15 @@
                 <li><%= link_to "Events", events_path %> </li>
                 <li><%= link_to "Resources", resources_path %> </li>
           <!-- begin login/logout links -->
-                  <% if logged_in? %>
-                  <li> Welcome, <%= current_user.name %>! </li><li><%= link_to 'Log Out', logout_path, method: :delete %></li>
-                <% else %>
-                   <li> <%= link_to 'Log In', login_path %> </li> <li><%= link_to 'Sign up', signup_path %></li>
-                <% end %>
+             
             </li>
           <!-- end login/logout links -->
           </ul>
+               <% if logged_in? %>
+                  <span>Welcome, <%= current_user.name %>! <%= link_to 'Log Out', logout_path, method: :delete %></span>
+                <% else %>
+                  <span> <%= link_to 'Log In', login_path %> <%= link_to 'Sign up', signup_path %></span>
+                <% end %>
         </div><!--/ end of nav bar -->
       </div> <!-- end of container -->
     </nav> <!-- end of nav class -->
