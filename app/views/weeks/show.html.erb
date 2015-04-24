@@ -1,10 +1,4 @@
 <div class="container-fluid">
-
-  <div class="masthead">
-      <h3 class="text-muted">Your Week at GA</h3>   
-
-  </div>
-
      <div class="jumbotron home-style">
         <h1> <%= @week.name %> 
         <span> <%= link_to("Edit Week", edit_week_path, {class:"btn btn-primary"}) %></span>
@@ -46,17 +40,16 @@
             </div>
 
               <div class="col-lg-4" id="events">
-              <h2>Events</h2>
-              
-              <% @week.events.each do |event| %>
-              <div>
-                <%= link_to(event.name, event_path) %> |
-                <%= event.date %> | 
-                <%= event.time %>
-             
-              </div>
-              <% end %>
-      
+                    <h2>Events</h2>
+                    
+                    <% @week.events.each do |event| %>
+                    <div>
+                      <%= link_to(event.name, event_path) %> |
+                      <%= event.date %> | 
+                      <%= event.time %>
+                      <%= link_to "Edit", edit_event_path %>
+                    </div>
+                    <% end %>
               <br>
               <br>
 

@@ -21,7 +21,7 @@ class EventsController < ApplicationController
         @week = Week.find(params[:id])
         @event = @week.events.new(params.require(:event).permit(:name, :date, :time, :location))
         @event.save
-        redirect_to weeks_path
+        redirect_to week_path
 
         # if @event.save 
         #     redirect_to weeks_path
@@ -46,6 +46,7 @@ class EventsController < ApplicationController
     end
 
     def destroy
+   
         @event = Event.find(params[:id])
         @event.destroy
         redirect_to events_path

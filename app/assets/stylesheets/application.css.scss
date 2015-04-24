@@ -21,6 +21,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+    background: #365659
+}
+
 
 #lead-css {
     font-size: 16px;
@@ -62,20 +66,25 @@
 
 #week-name-button {
     width: 150px;
-    height: 130px;
+height: 50px;
     margin: 20px;
+    background: #E1DED7;
+    border-radius: 50deg;
+    rotate: 90deg;
 }
 
 .home-style {
     margin-top: 50px;
     margin-left: 30px;
     width: 1200px;
-     border: 3px solid black;
     border-radius: 25px;
+    background: #A6A59F;
+    color: black;
+    height: 100%;
 }
 
 .table {
-    background-color: turquoise;
+    background-color: #A6A59F;
 }
 
 .table-bordered {
@@ -102,3 +111,25 @@
     width: 1250px;
     display: inline-block;
 }
+
+.current-user {
+    float: right;
+    color: white;
+}
+
+.container-weeks {
+    display: inline-block;
+    width: 100%
+}
+
+.weeks-header {
+    display: inline-block;
+    width: 40%
+}
+
+.weeks-each {
+    display: inline-block;
+    width: 10%;
+}
+
+
