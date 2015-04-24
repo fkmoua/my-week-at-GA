@@ -36,19 +36,34 @@
 
               <div class="col-lg-4" id="resources">
               <h2>Resources</h2>
-                   <p><%= link_to("Add a resource", new_resource_path, {class: "btn btn-primary"}) %></p>
+              <% @week.resources.each do |resource| %>
+                <%= resource.name %>
+              <% end %>
+              <br>
+              <br>
+              <%= link_to("Add a resource", new_week_resource_path, {class: "btn btn-primary"}) %>
             
             </div>
 
               <div class="col-lg-4" id="events">
               <h2>Events</h2>
+              
               <% @week.events.each do |event| %>
-                <%= event.name %>
-
+              <div>
+                <%= link_to(event.name, event_path) %> |
+                <%= event.date %> | 
+                <%= event.time %>
+             
+              </div>
               <% end %>
+      
+              <br>
+              <br>
 
-                  <p><%= link_to("New Event", new_week_event_path, {class: "btn btn-primary"}) %></p>
-                  <p><%= link_to("See all Events", events_path, {class: "btn btn-primary"}) %></p>
+                  <%= link_to("New Event", new_week_event_path, {class: "btn btn-primary"}) %>
+                  <%= link_to("See all Events", events_path, {class: "btn btn-primary"}) %>
+                <br>
+                <br>
             </div>
     </div>
 </div>

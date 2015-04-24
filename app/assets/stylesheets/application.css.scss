@@ -74,10 +74,31 @@
     border-radius: 25px;
 }
 
-.table-bordered {
-    border: 3px solid black;
-    radius: 25px;
+.table {
+    background-color: turquoise;
 }
 
+.table-bordered {
+    border: 5px solid black;
+}
 
+.day {
+    height: 150px;
+    width: 150px;
+}
 
+.user-box {
+    height: 250px;
+    width: 250px;
+    border: 2px solid black;
+    padding: 20px;
+    margin: 5px 20px 5px 20px;
+    background-color: turquoise;
+    display: inline-block;
+    float: left;
+}
+
+.all-users-container {
+    width: 1250px;
+    display: inline-block;
+}

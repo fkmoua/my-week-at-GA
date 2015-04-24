@@ -2,10 +2,19 @@ Rails.application.routes.draw do
 
   get "weeks" => "weeks#index"
   get "weeks/new" => "weeks#new", as: :new_week
+  get "weeks/:id" => "weeks#show", as: :week
   post "weeks" => "weeks#create"
+
+
   get "weeks/:id/newevent" => "events#new", as: :new_week_event
   post "weeks/:id/events" => "events#create", as: :week_events
-  get "weeks/:id" => "weeks#show", as: :week
+
+  get "weeks/:id/events/:id/edit" => "events#edit", as: :edit_week_event_path
+  post "weeks/:id/events" => "events#update"
+
+  get "weeks/:id/newresource" => "resources#new", as: :new_week_resource
+  post "weeks/:id/resources" => "resources#create", as: :week_resources
+
   get "weeks/:id/edit" => "weeks#edit", as: :edit_week
   patch "weeks/:id" => "weeks#update"
   delete "weeks/:id" => "weeks#destroy"
@@ -16,15 +25,17 @@ Rails.application.routes.draw do
   get "events/new" => "events#new", as: :new_event
   get "events/:id" => "events#show", as: :event
   post "events" => "events#create"
-  # get "events/:id/edit" => "events#edit", as: :edit_event
-  # patch "events/:id" => "events#update"
-  # delete "events/:id" => "events#destroy"
+  get "weeks/:id/events/:id/edit" => "events#edit", as: :edit_event
+  patch "events/:id" => "events#update"
+  delete "events/:id" => "events#destroy"
 
-  get "resources" => "resources#index"
+   get "resources" => "resources#index"
   get "resources/new" => "resources#new", as: :new_resource
   get "resources/:id" => "resources#show", as: :resource
   post "resources" => "resources#create"
-
+  get "weeks/:id/resources/:id/edit" => "resources#edit", as: :edit_resource
+  patch "resources/:id" => "resources#update"
+  delete "resources/:id" => "resources#destroy"
 
   get '/signup' => 'users#new'
   get "users" => "users#index"

@@ -2,15 +2,25 @@
 <br>
 <br>
 
-<h2> Your team </h2>
-<hr>
+<div class="all-users-container">
 <% @users.each do |user| %>
-    <div>
-    <%= user.name %>
-    </div>
-    <div>
-    <%= user.email %>
-    </div>
-    <br>
+    <div class="user-box">
 
+        <center>
+        <%= user.name %>
+          </center>
+       <br>
+        Email:  <br>
+        <%= user.email %> <br><br>
+        Email:  <br>
+        <%= user.email %> <br><br>
+        Email:  <br>
+        <%= user.email %> <br><br>
+        Email: <br> 
+        <%= user.email %>
+
+
+    </div> <!-- end of user-box class -->
+    <br>
 <% end %>
+</div> <!-- end of all-users-container -->
