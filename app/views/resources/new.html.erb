@@ -1,3 +1,5 @@
+<%= render "shared/navbar" %>
+
 <div class="container-fluid">
 
 <div class="masthead">
@@ -6,22 +8,27 @@
 
 <center>
 <%= form_for [@week,@resource] do |f| %>
-
+    
     <h2> Resource </h2>
     <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
     </div>
 
 
     <div>
-    <%= f.label :url %>
-    <%= f.text_field :url%>
+        <%= f.label :description %>
+        <%= f.text_field :description%>
     </div>
 
     <div>
-    <%= f.label :category %>
-    <%= f.text_field :category%>
+        <%= f.label :url %>
+        <%= f.text_field :url%>
+    </div>
+
+    <div>
+        <%= f.label :category %>
+        <%= f.text_field :category%>
     </div>
 
     <%= f.submit "Add Week" %>

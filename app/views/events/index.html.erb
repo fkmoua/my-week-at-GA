@@ -1,7 +1,11 @@
+<%= render "shared/navbar" %>
+<br>
+<br>
+<br>
 <div class="container-fluid">
 
      <div>
-       <%= month_calendar table: {class: "table table-bordered"}, tr: {class: "calendar-row"}, td: {class: "day"}, events: @events do |date, events| %>
+       <center><%= month_calendar table: {class: "table table-bordered"}, tr: {class: "calendar-row"}, td: {class: "day"}, events: @events do |date, events| %></center>
 
           <div>
           <strong><%= date.day %></strong>

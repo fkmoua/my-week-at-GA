@@ -15,7 +15,7 @@ class ResourcesController < ApplicationController
 
     def create
         @week = Week.find(params[:id])
-        @resource = @week.resources.new(params.require(:resource).permit(:name, :url, :category))
+        @resource = @week.resources.new(params.require(:resource).permit(:name, :url, :category, :description))
         @resource.save
         redirect_to resources_path
 

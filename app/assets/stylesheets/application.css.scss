@@ -14,15 +14,14 @@
  *= require_self
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
+
 
 // Place all the styles related to the Weeks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-    background: #365659
+    background: #365659;
 }
 
 
@@ -35,52 +34,76 @@ body {
 }
 
 #this-week {
-    background-color: #eee;
-    border: 3px solid black;
     border-radius: 25px;
+    background: #A6A59F;
+    color: black;
+    height: relative;
+    padding: 50px;
+    width: 45%;
+    margin: 10px;
 }
 
 #next-week {
-    background-color: #eee;
-    border: 3px solid black;
-    border-radius: 25px;
+     border-radius: 25px;
+    background: #A6A59F;
+    color: black;
+    height: relative;
+    padding: 50px;
+    width: 45%;
+    margin: 10px;
    }
 
 #office-hour {
-    background-color: #eee;
-    border: 3px solid black;
     border-radius: 25px;
+    background: #A6A59F;
+    color: black;
+    height: relative;
+    padding: 50px;
+    width: 40%;
+    margin: 10px;
 }
 
 #resources {
-    background-color: #eee;
-    border: 3px solid black;
-    border-radius: 25px;
+  border-radius: 25px;
+    background: #A6A59F;
+    color: black;
+    height: relative;
+    padding: 50px;
+    width: 40%;
+    margin: 10px;
     }
 
 #events {
-    background-color: #eee;
-    border: 3px solid black;
-    border-radius: 25px;
+  border-radius: 25px;
+    background: #A6A59F;
+    color: black;
+    height: relative;
+    padding: 50px;
+    width: 100%;
+    margin: 10px;
 }
 
 #week-name-button {
-    width: 150px;
-height: 50px;
+    width: 130px;
+    height: 130px;
     margin: 20px;
-    background: #E1DED7;
-    border-radius: 50deg;
-    rotate: 90deg;
+    border-radius: 300px;
+    border: 3px solid black;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    font-size: 60px;
+    display: inline-block;
 }
 
 .home-style {
     margin-top: 50px;
-    margin-left: 30px;
-    width: 1200px;
+    margin-left: 120px;
+    width: 1000px;
     border-radius: 25px;
     background: #A6A59F;
     color: black;
-    height: 100%;
+    height: relative;
 }
 
 .table {
@@ -96,21 +119,26 @@ height: 50px;
     width: 150px;
 }
 
+.all-users-container {
+    width: 100%;
+    display: inline-block;
+}
+
 .user-box {
-    height: 250px;
-    width: 250px;
-    border: 2px solid black;
+    width: 350px;
+    height: 350px;
+    border: 5px solid black;
     padding: 20px;
     margin: 5px 20px 5px 20px;
-    background-color: turquoise;
+    background-color: #A6A59F;
     display: inline-block;
+    font-size: 12px;
+    border-radius: 40px;
+    color: black;
     float: left;
 }
 
-.all-users-container {
-    width: 1250px;
-    display: inline-block;
-}
+
 
 .current-user {
     float: right;
@@ -132,4 +160,38 @@ height: 50px;
     width: 10%;
 }
 
+.placeholder {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 300px;
+    background: #E1DED7;
+}
 
+.content-container {
+    width: 100%;
+    display: inline-block;
+}
+
+.first-row {
+    width: 40%;
+    display: inline-block;
+    float: left;
+}
+
+.second-row {
+    width: 40%;
+    display: inline-block;
+}
+
+.form-style {
+    background: #A6A59F;
+    width: 50%;
+    margin: 30px 300px 100px 300px;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.calendar-title{
+    font-size: 50px;
+}

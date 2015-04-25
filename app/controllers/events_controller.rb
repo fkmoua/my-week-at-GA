@@ -46,8 +46,8 @@ class EventsController < ApplicationController
     end
 
     def destroy
-   
-        @event = Event.find(params[:id])
+        @week = Week.find(params[:id])
+        @event = @week.events.find(params[:id])
         @event.destroy
         redirect_to events_path
     end

@@ -2,29 +2,57 @@
 <br>
 
 <center>
-<h2> Sign up </h2>
 
-<%= form_for @user do |f| %>
+<h1> Welcome </h1>
 
-    <div>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
+<%= form_for @user, html: {class: "form-horizontal form-style"} do |f| %>
+
+    <div class="form-group">
+        
+        <h3><%= f.label :name, {class: "col-lg-4 control-label"} %></h3>
+        <div class="col-lg-8">
+            <%= f.text_field :name, {class: "form-control", placeholder: "Name"} %>
+        </div>
     </div>
 
-    <div>
-        <%= f.label :email %>
-        <%= f.text_field :email %>
+       <div class="form-group">
+<h3><%= f.label :email, {class: "col-lg-4 control-label"} %></h3>
+        <div class="col-lg-8">
+            <%= f.text_field :email, {class: "form-control", placeholder: "Email"} %>
+        </div>
+    </div>   
+
+    <div class="form-group">
+    <h3>    <%= f.label :password, {class: "col-lg-4 control-label"} %> </h3>
+        <div class="col-lg-8">
+            <%= f.password_field :password, {class: "form-control", placeholder: "Password"} %>
+        </div>
     </div>
 
-    <div>
-        <%= f.label :password %>
-        <%= f.password_field :password %>
-    </div>
+       <div class="form-group">
+<h3><%= f.label :github, {class: "col-lg-4 control-label"} %></h3>
+        <div class="col-lg-8">
+            <%= f.text_field :github, {class: "form-control", placeholder: "Email"} %>
+        </div>
+    </div>   
+
+           <div class="form-group">
+<h3><%= f.label :linkedin, {class: "col-lg-4 control-label"} %></h3>
+        <div class="col-lg-8">
+            <%= f.text_field :linkedin, {class: "form-control", placeholder: "Email"} %>
+        </div>
+    </div>   
+
+           <div class="form-group">
+<h3><%= f.label :facebook, {class: "col-lg-4 control-label"} %></h3>
+        <div class="col-lg-8">
+            <%= f.text_field :facebook, {class: "form-control", placeholder: "Email"} %>
+        </div>
+    </div>   
+
 
     <div>
-    <%= f.submit "Create account" %>
+    <%= f.submit "Create account", {class:"btn btn-primary btn-block"} %>
     </div>
 
 <% end %>
-
-</center>

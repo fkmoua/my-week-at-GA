@@ -1,24 +1,35 @@
+<%= render "shared/navbar" %>
 <br>
 <br>
 <br>
-
+<br>
 <div class="all-users-container">
 <% @users.each do |user| %>
     <div class="user-box">
 
         <center>
-        <%= user.name %>
-          </center>
-       <br>
-        Email:  <br>
-        <%= user.email %> <br><br>
-        Email:  <br>
-        <%= user.email %> <br><br>
-        Email:  <br>
-        <%= user.email %> <br><br>
-        Email: <br> 
-        <%= user.email %>
+            <div class="placeholder"></div>
+            <div>
+                <h2><%= user.name %></h2>
+                <hr>
+             </div>
+        </center>
+    
+        <div class="content-container"    >
+            <div class="first-row">
+                <strong>Email: </strong> <br>
+                <%= user.email %> <br><br>
+                <strong>Github:</strong>  <br>
+                <%= user.github %> <br><br>
+            </div>
 
+            <div class="second-row">
+                <strong>Linkedin: </strong>  <br>
+                <%= user.linkedin %> <br><br>
+                <strong> Facebook: </strong><br> 
+                <%= user.facebook %>
+            </div>
+        </div>
 
     </div> <!-- end of user-box class -->
     <br>

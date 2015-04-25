@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150421024148) do
+ActiveRecord::Schema.define(version: 20150424215959) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,9 +33,10 @@ ActiveRecord::Schema.define(version: 20150421024148) do
     t.string   "name"
     t.string   "url"
     t.integer  "week_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "category"
+    t.string   "description"
   end
 
   add_index "resources", ["week_id"], name: "index_resources_on_week_id", using: :btree
@@ -47,6 +48,9 @@ ActiveRecord::Schema.define(version: 20150421024148) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
+    t.string   "linkedin"
+    t.string   "github"
+    t.string   "facebook"
   end
 
   create_table "weeks", force: :cascade do |t|

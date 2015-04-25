@@ -1,3 +1,5 @@
+<%= render "shared/navbar" %>
+
 <div class="container-fluid">
      <div class="jumbotron home-style">
         <h1> <%= @week.name %> 
@@ -23,23 +25,24 @@
     </div>
 
     <div class="row">
-            <div class="col-lg-4" id="office-hour">
+            <div class="col-lg-6" id="office-hour">
               <h2>Office Hour</h2>
                 <p><%= @week.office_hours %></p>
             </div>
 
-              <div class="col-lg-4" id="resources">
-              <h2>Resources</h2>
-              <% @week.resources.each do |resource| %>
-                <%= resource.name %>
-              <% end %>
-              <br>
-              <br>
-              <%= link_to("Add a resource", new_week_resource_path, {class: "btn btn-primary"}) %>
-            
+              <div class="col-lg-6" id="resources">
+                <h2>Resources</h2>
+                <% @week.resources.each do |resource| %>
+                  <%= resource.name %>
+                <% end %>
+                <br>
+                <br>
+                <%= link_to("Add a resource", new_week_resource_path, {class: "btn btn-primary"}) %>
             </div>
+      </div>
 
-              <div class="col-lg-4" id="events">
+      <div class="row">
+              <div class="col-lg-12" id="events">
                     <h2>Events</h2>
                     
                     <% @week.events.each do |event| %>
@@ -48,6 +51,8 @@
                       <%= event.date %> | 
                       <%= event.time %>
                       <%= link_to "Edit", edit_event_path %>
+                      <%= link_to "Delete", weeks_event_path, {method: :delete} %>
+
                     </div>
                     <% end %>
               <br>
@@ -58,6 +63,7 @@
                 <br>
                 <br>
             </div>
+      </div>
     </div>
 </div>
 

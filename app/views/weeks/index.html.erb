@@ -1,3 +1,7 @@
+<%= render "shared/navbar" %>
+<br>
+<br>
+
 <div class="container-fluid">
 
   <div class="masthead">
@@ -13,7 +17,7 @@
 
           <div class="weeks-each">
             <% @weeks.each do |week| %>
-                <%= link_to(week.name, week_path(week), {class:"btn btn-default", id:"week-name-button"})%>
+              <%= link_to(week.name, week_path(week), {class:"btn btn-default", id:"week-name-button"})%>
             <% end %>
           </div>
       </div>

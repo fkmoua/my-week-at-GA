@@ -1,15 +1,17 @@
-  <div class="jumbotron home-style">
+<%= render "shared/navbar" %>
+
+<div class="jumbotron home-style">
        <table class="table">
         <tr>
           <th> Name </th>
-          <th> URL </th>
+          <th> Description </th>
           <th> Category</th>
         </tr>
 
       <% @resources.each do |resource| %>
         <tr>
           <td><%= link_to resource.name%></td>
-          <td><%= resource.url %></td>
+          <td><%= resource.description %></td>
           <td><%= resource.category %></td>
         </tr>
       

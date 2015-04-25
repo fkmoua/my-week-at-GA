@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
 
   get "weeks/:id/newevent" => "events#new", as: :new_week_event
+  get "weeks/:id/events/:id" => "events#show", as: :weeks_event
   post "weeks/:id/events" => "events#create", as: :week_events
 
   get "weeks/:id/events/:id/edit" => "events#edit", as: :edit_week_event_path
@@ -27,7 +28,7 @@ Rails.application.routes.draw do
   post "events" => "events#create"
   get "weeks/:id/events/:id/edit" => "events#edit", as: :edit_event
   patch "events/:id" => "events#update"
-  delete "events/:id" => "events#destroy"
+  delete "weeks/:id/events/:id" => "events#destroy"
 
    get "resources" => "resources#index"
   get "resources/new" => "resources#new", as: :new_resource
