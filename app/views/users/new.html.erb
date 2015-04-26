@@ -30,6 +30,13 @@
     </div>
 
        <div class="form-group">
+    <h2><%= f.label :password_confirmation, {class: "col-lg-4 control-label"}  %></h2>
+    <div class="col-lg-6">
+    <%= f.password_field :password_confirmation, {class: "form-control", placeholder: "Password"}  %>
+    </div>
+  </div>
+
+       <div class="form-group">
 <h3><%= f.label :github, {class: "col-lg-4 control-label"} %></h3>
         <div class="col-lg-8">
             <%= f.text_field :github, {class: "form-control", placeholder: "Email"} %>

@@ -1,7 +1,7 @@
 <br>
 <br>
 <center>
-<h1>Welcome </h1>
+<!-- <h1>Welcome </h1> -->
 <%= form_for :login, html: {class: "form-horizontal form-style" } do |f| %>
   <div class="form-group">
       <h2><%= f.label :email, {class: "col-lg-4 control-label"}  %></h2>
@@ -21,4 +21,7 @@
     <%= f.submit 'Log In', {class:"btn btn-primary btn-block"}  %>
   </div>
 <% end %>
+<center><h3> or </h3></center>
+<br>
+<center><%= link_to("Create Account", new_user_path, class:"btn btn-primary btn-block", id:"create-account-btn") %></center>
 </center>

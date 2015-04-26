@@ -38,7 +38,7 @@ Rails.application.routes.draw do
   patch "resources/:id" => "resources#update"
   delete "resources/:id" => "resources#destroy"
 
-  get '/signup' => 'users#new'
+  get '/signup' => 'users#new', as: :new_user
   get "users" => "users#index"
   get "users/:id" => "users#show"
   post "users" => "users#create"

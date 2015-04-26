@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
     attr_reader :password
+    before_save :format_user_input
 
     def index
     end
@@ -21,5 +22,16 @@ class User < ActiveRecord::Base
             return false
         end
     end
+
+    private
+      def format_user_input
+        self.name = self.name.titleize
+        self.email = self.email.downcase
+      end
+    
+
+    validates :name, presence: true
+    validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+    validates :password, presence: true, confirmation: true, length: { in: 6..20 }
 
 end

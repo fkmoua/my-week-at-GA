@@ -187,11 +187,25 @@ body {
 .form-style {
     background: #A6A59F;
     width: 50%;
-    margin: 30px 300px 100px 300px;
-    padding: 20px;
-    border: 1px solid black;
+    margin: 30px 300px 40px 300px;
+    padding: 60px;
+    border: 4px solid black;
+    border-radius: 20px;
+    padding-bottom: 40px;
 }
 
-.calendar-title{
+.calendar-header{
     font-size: 50px;
+}
+
+.day {
+    color: black;
+}
+
+.table-bordered {
+    color: black;
+}
+
+#create-account-btn {
+    width: 40%;
 }

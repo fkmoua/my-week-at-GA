@@ -5,7 +5,7 @@
 <div class="container-fluid">
 
      <div>
-       <center><%= month_calendar table: {class: "table table-bordered"}, tr: {class: "calendar-row"}, td: {class: "day"}, events: @events do |date, events| %></center>
+       <center><%= month_calendar header: {class: "calendar-header"}, table: {class: "table table-bordered"}, tr: {class: "calendar-row"}, td: {class: "day"}, events: @events do |date, events| %></center>
 
           <div>
           <strong><%= date.day %></strong>
@@ -14,7 +14,7 @@
           <br>
             <div>
                 <% events.each do |event| %>
-                    <%= event.name %>   |    <%= event.time %>
+                    <%= event.name %> <%= event.time %>
                 <% end %>
             <div>
 
