@@ -147,17 +147,19 @@ body {
 
 .container-weeks {
     display: inline-block;
-    width: 100%
+    width: 1200px;
 }
 
 .weeks-header {
     display: inline-block;
-    width: 40%
+    width: 500px;
+    float: left;
 }
 
 .weeks-each {
     display: inline-block;
-    width: 10%;
+    width: 700px;
+    float: left;
 }
 
 .placeholder {
